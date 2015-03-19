@@ -1,3 +1,11 @@
+body {
+  background-color: #e9e6e1;
+}
+
+.page-header {
+  border-bottom: 1px solid #888;
+}
+
 #todo-input {
   display: inline-block;
   width: auto;
