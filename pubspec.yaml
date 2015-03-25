@@ -1,5 +1,5 @@
 name: tutorial_kanban
-version: 0.0.1
+version: 0.0.2
 author: Marco Jakob <majakob@gmx.ch>
 description: Tutorial about how to build a Kanban-Style Todo Board with Dart.
 environment:
@@ -9,3 +9,5 @@ dependencies:
   script_inliner: any
 transformers:
 - script_inliner
+- $dart2js:
+    minify: true
