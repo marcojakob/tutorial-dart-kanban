@@ -11,3 +11,12 @@ body {
   width: auto;
   vertical-align: middle;
 }
+
+
+/* Some styling for the example to be displayed nicely on the tutorial website. */
+@media (min-width: 690px) {
+  .col-sm-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+}
