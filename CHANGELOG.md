@@ -9,3 +9,4 @@
 
 * Add `drone_io.sh` script for automatically deploying the example code on
   GitHub Pages through drone.io.
+* Add some example todo's.

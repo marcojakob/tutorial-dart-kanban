@@ -21,6 +21,9 @@ void main() {
 
   // React to button click.
   todoButton.onClick.listen(addTodoItem);
+
+  // Add some example todos.
+  addExampleTodos();
 }
 
 /// Adds an item to the Todo list.
@@ -52,3 +55,38 @@ void moveItem(Event e) {
     item.remove();
   }
 }
+
+/// Adds some example todos.
+void addExampleTodos() {
+  var one = new AnchorElement(href: '#')
+    ..text = '⇧ Add More Todo\'s ⇧'
+    ..classes.add('list-group-item')
+    ..onClick.listen(moveItem);
+  todoList.children.add(one);
+
+  var two = new AnchorElement(href: '#')
+    ..text = 'Follow @codemakery ;-)'
+    ..classes.add('list-group-item')
+    ..onClick.listen(moveItem);
+  todoList.children.add(two);
+
+  var three = new AnchorElement(href: '#')
+    ..text = 'Enjoy Dart Programming'
+    ..classes.add('list-group-item')
+    ..onClick.listen(moveItem);
+  doingList.children.add(three);
+
+  var four = new AnchorElement(href: '#')
+    ..text = 'Learn HTML'
+    ..classes.add('list-group-item')
+    ..onClick.listen(moveItem);
+  doneList.children.add(four);
+
+  var five = new AnchorElement(href: '#')
+    ..text = 'Learn CSS'
+    ..classes.add('list-group-item')
+    ..onClick.listen(moveItem);
+  doneList.children.add(five);
+
+}
+
