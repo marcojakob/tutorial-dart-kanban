@@ -87,6 +87,4 @@ void addExampleTodos() {
     ..classes.add('list-group-item')
     ..onClick.listen(moveItem);
   doneList.children.add(five);
-
 }
-

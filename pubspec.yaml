@@ -6,8 +6,3 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
-  script_inliner: any
-transformers:
-- script_inliner
-- $dart2js:
-    minify: true
