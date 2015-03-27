@@ -6,7 +6,6 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
-  dart_to_js_script_rewriter:
-    git: https://github.com/sethladd/dart_to_js_script_rewriter
+  dart_to_js_script_rewriter: any
 transformers:
 - dart_to_js_script_rewriter
