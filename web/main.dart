@@ -22,6 +22,9 @@ void main() {
 
   // Auf Knopfdruck-Event reagieren.
   todoButton.onClick.listen(addTodoItem);
+
+  // Add some example todos.
+  addExampleTodos();
 }
 
 /// Fügt ein neues Todo-Element zur Liste hinzu.
@@ -55,4 +58,42 @@ void moveItem(Event e) {
   } else {
     item.remove();
   }
+}
+
+/// Adds some example todos.
+void addExampleTodos() {
+  var one = AnchorElement(href: '#')
+    ..text = '⇧ Add More Todo\'s ⇧'
+    ..classes.add('list-group-item')
+    ..classes.add('list-group-item-action')
+    ..onClick.listen(moveItem);
+  todoList.children.add(one);
+
+  var two = AnchorElement(href: '#')
+    ..text = 'Follow @codemakery'
+    ..classes.add('list-group-item')
+    ..classes.add('list-group-item-action')
+    ..onClick.listen(moveItem);
+  todoList.children.add(two);
+
+  var three = AnchorElement(href: '#')
+    ..text = 'Enjoy Programming'
+    ..classes.add('list-group-item')
+    ..classes.add('list-group-item-action')
+    ..onClick.listen(moveItem);
+  doingList.children.add(three);
+
+  var four = AnchorElement(href: '#')
+    ..text = 'Learn HTML'
+    ..classes.add('list-group-item')
+    ..classes.add('list-group-item-action')
+    ..onClick.listen(moveItem);
+  doneList.children.add(four);
+
+  var five = AnchorElement(href: '#')
+    ..text = 'Learn CSS'
+    ..classes.add('list-group-item')
+    ..classes.add('list-group-item-action')
+    ..onClick.listen(moveItem);
+  doneList.children.add(five);
 }
