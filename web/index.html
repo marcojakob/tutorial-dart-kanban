@@ -2,46 +2,43 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" />
+    <script defer src="main.dart.js"></script>
   </head>
 
   <body>
     <div class="container">
-
-      <div class="page-header">
+      <div class="page-header mt-4 mb-4">
         <h1>Kanban Board <small id="subtitle"></small></h1>
       </div>
 
       <input id="todo-input" type="text" class="form-control" placeholder="What needs to be done?">
       <button id="todo-button" type="button" class="btn btn-primary">Add</button>
-
-      <div class="row">
-        <div class="col-sm-4">
-          <h2><span class="glyphicon glyphicon-inbox"></span> Todo</h2>
-          <div id="todo-list" class="list-group">
+      
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <h2>📥 Todo</h2>
+          <div id="todo-list" class="list-group mt-3 mb-4">
           </div>
         </div>
-        <div class="col-sm-4">
-          <h2><span class="glyphicon glyphicon-cog"></span> Doing</h2>
-          <div id="doing-list" class="list-group">
+        <div class="col-md-4">
+          <h2>⚙️ Doing</h2>
+          <div id="doing-list" class="list-group mt-3 mb-4">
           </div>
         </div>
-        <div class="col-sm-4">
-          <h2><span class="glyphicon glyphicon-thumbs-up"></span> Done</h2>
-          <div id="done-list" class="list-group">
+        <div class="col-md-4">
+          <h2>👍 Done</h2>
+          <div id="done-list" class="list-group mt-3 mb-4">
           </div>
         </div>
       </div>
 
     </div>
-
-    <script type="application/dart" src="main.dart"></script>
-    <script src="packages/browser/dart.js"></script>
   </body>
 </html>

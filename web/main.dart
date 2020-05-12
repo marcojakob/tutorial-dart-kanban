@@ -8,10 +8,11 @@ DivElement doingList;
 DivElement doneList;
 
 void main() {
-  // Set the subtitle.
-  querySelector('#subtitle').text = 'by Marco';
+  // Den Untertitel setzen.
+  var subtitle = querySelector('#subtitle');
+  subtitle.text = 'by Marco';
 
-  // Get the references to the HTML elements.
+  // Die Referenzen auf die HTML-Elemente holen.
   todoInput = querySelector('#todo-input');
   todoButton = querySelector('#todo-button');
 
@@ -19,34 +20,34 @@ void main() {
   doingList = querySelector('#doing-list');
   doneList = querySelector('#done-list');
 
-  // React to button click.
+  // Auf Knopfdruck-Event reagieren.
   todoButton.onClick.listen(addTodoItem);
-
-  // Add some example todos.
-  addExampleTodos();
 }
 
-/// Adds an item to the Todo list.
+/// Fügt ein neues Todo-Element zur Liste hinzu.
 void addTodoItem(Event e) {
-  AnchorElement newTodo = new AnchorElement();
+  var newTodo = AnchorElement();
   newTodo.href = '#';
   newTodo.text = todoInput.value;
   newTodo.classes.add('list-group-item');
+  newTodo.classes.add('list-group-item-action');
 
+  // Klick-Event-Listener für das Todo-Element.
   newTodo.onClick.listen(moveItem);
 
   todoList.children.add(newTodo);
 
-  // Clear the textfield value.
+  // Das Textfeld löschen.
   todoInput.value = '';
 }
 
-/// Moves an item to the doing or done list or deletes it at the end.
+/// Verschiebt ein Todo-Element zur 'doing' oder 'done' Liste oder löscht es,
+/// wenn es in der letzten Liste angeklickt wird.
 void moveItem(Event e) {
-  // Get the clicked item from the event.
+  // Das gecklickte Element aus dem Event holen.
   Element item = e.target;
 
-  // Move or delete depending on the list the item is part of.
+  // Verschieben oder löschen, je nach dem in welcher Liste das Element ist.
   if (item.parent == todoList) {
     doingList.children.add(item);
   } else if (item.parent == doingList) {
@@ -54,37 +55,4 @@ void moveItem(Event e) {
   } else {
     item.remove();
   }
-}
-
-/// Adds some example todos.
-void addExampleTodos() {
-  var one = new AnchorElement(href: '#')
-    ..text = '⇧ Add More Todo\'s ⇧'
-    ..classes.add('list-group-item')
-    ..onClick.listen(moveItem);
-  todoList.children.add(one);
-
-  var two = new AnchorElement(href: '#')
-    ..text = 'Follow @codemakery ;-)'
-    ..classes.add('list-group-item')
-    ..onClick.listen(moveItem);
-  todoList.children.add(two);
-
-  var three = new AnchorElement(href: '#')
-    ..text = 'Enjoy Dart Programming'
-    ..classes.add('list-group-item')
-    ..onClick.listen(moveItem);
-  doingList.children.add(three);
-
-  var four = new AnchorElement(href: '#')
-    ..text = 'Learn HTML'
-    ..classes.add('list-group-item')
-    ..onClick.listen(moveItem);
-  doneList.children.add(four);
-
-  var five = new AnchorElement(href: '#')
-    ..text = 'Learn CSS'
-    ..classes.add('list-group-item')
-    ..onClick.listen(moveItem);
-  doneList.children.add(five);
 }
